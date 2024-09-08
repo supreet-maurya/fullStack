@@ -6,7 +6,6 @@ const styledIcon = styled(LocalOfferIcon)`
     padding: 15px;
     margin-right: 15px;
     color:#00CC00;
-
 `
 const Rows = styled(TableRow)`
     font-size:14px;

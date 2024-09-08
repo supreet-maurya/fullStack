@@ -2,7 +2,7 @@ import { useState } from "react";
 // import { createContext } from "react";
 import UserContext from "./UserContext";
 
-const UserContextProvider = ({children}) =>{
+const UserContextProvider = ({children}) => {
 
     const [UserAccount, setUserAccount] = useState('')
     const [Open , setOpen] = useState(false);

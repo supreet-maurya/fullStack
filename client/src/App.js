@@ -16,7 +16,7 @@ function App() {
   }
   return (
 
-    <BrowserRouter>
+      <BrowserRouter>
         <div onClick={handleClick} className="App">
           <Header />
           <div className='mt-[73px]'>

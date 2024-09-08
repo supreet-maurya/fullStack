@@ -4,13 +4,11 @@ import Subtotal from "./Subtotal";
 import EmptyCart from "./EmptyCart";
 
 const Cart = () =>{
-    const { cartItems } = useSelector(state => state.cart );
+    const { cartItems } = useSelector( state => state.cart );
     return (
         <>
             {
-                
                 (cartItems.length > 0)  ?
-
 
                 <div className="  flex mx-40 p-5 gap-4">
 
@@ -21,14 +19,12 @@ const Cart = () =>{
                             cartItems.map(item => (
                                 <>
                                 <CartItems item = {item} />
-                                <hr className="border-t-1 border-gray-400 my-2" />
+                                    <hr className="border-t-1 border-gray-400 my-2" />
                                 </>
                             ))
-                            
                         }
-                        {/* <hr></hr> */}
 
-                        <div  className=" right-0 w-full bg-gray-300">
+                        <div className=" right-0 w-full bg-gray-300">
                             <button className="ml-[86%] bg-gray-400 font-bold  p-2 rounded-md m-2">Buy Now</button>
                         </div>
 
@@ -37,17 +33,12 @@ const Cart = () =>{
                     <div className="right bg-gray-200 w-[30%]">
                         <Subtotal cartItems={cartItems}/>
                     </div>
-
                 </div>
-
                 :
-
                 <div>
                     <EmptyCart/>
                 </div>
-
             }
-        
         </>
     )
 }

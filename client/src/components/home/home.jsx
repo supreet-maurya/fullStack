@@ -1,18 +1,16 @@
 import { useEffect } from 'react'
 import Navbar from "./Navbar"
-import Banner from "./Banner" 
-// import { Fragment } from "react"
+import Banner from "./Banner"
 import Slide from './Slide'
 import MidSlide from './MidSlide'
 import Midsection from './Midsection'
 
 import { getProducts } from '../../redux/actions/productAction'
 import { useDispatch , useSelector } from 'react-redux'
-const Home = () =>{
+const Home = () => {
 
     let  { products }  = useSelector(state => state.getProducts);
     // console.log(products);
-
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getProducts())
@@ -28,7 +26,6 @@ const Home = () =>{
                 <Midsection/>
                 <Slide products = {products} title = {"Discounts for You" } />
                 <Slide products = {products} title = {"Top Picks" } />
-
             </div>
         </div>
     )

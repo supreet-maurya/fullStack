@@ -5,7 +5,7 @@ export const cartReducer = ( state = { cartItems: [] } , action ) => {
     // console.log(action);
     // console.log(state);
 
-    switch(action.type){
+    switch(action.type) {
         case actionType.ADD_TO_CART:
             const item = action.payload;
             const exist = state.cartItems.find(product => product.id === item.id ) ;
@@ -19,7 +19,6 @@ export const cartReducer = ( state = { cartItems: [] } , action ) => {
                 // console.log(state.cartItems);
                 // console.log("else");
                 let ret =  { ...state , cartItems: [...state.cartItems , item ] }
-                
                 // console.log("ret = ");
                 // console.log(ret);
                 return ret;

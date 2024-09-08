@@ -1,6 +1,6 @@
 import { navData } from "../constants/data"
 
-const Navbar = () =>{
+const Navbar = () => {
     return (
         <div className="overflow-auto gap-5 lg:gap-0 bg-white flex justify-between p-3 cursor-pointer mx-3 ">
             {

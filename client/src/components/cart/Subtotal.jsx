@@ -31,7 +31,7 @@ const Subtotal = ({cartItems}) => {
             <div className='flex justify-between text-[17px]'>Delivery Charges  <span> ₹100 </span> </div>
             
             <hr className="border-t-1 border-gray-400 my-2" />
-            <div className='flex justify-between text-[17px]'>Savings  <span> ₹{discount - 100} </span> </div>
+            <div className='flex justify-between text-[17px]'>Savings <span> ₹{discount - 100} </span> </div>
             <div className='flex justify-between text-[17px]'>Total Amount <span> ₹{price - discount + 100} </span> </div>
         </div>
     </div>

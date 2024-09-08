@@ -1,4 +1,4 @@
-import {Dialog} from '@mui/material';
+import { Dialog } from '@mui/material';
 import { useState , useContext} from 'react';
 import { authenticationSignUp , authenticationLogin} from '../../service/api';
 import UserContext from '../../context/UserContext';
@@ -9,7 +9,7 @@ const accountInitialValues = {
         heading:'Login',
         subHeading:' Get access to your orders Wishlist and Recommendations'
     },
-    signup:{
+    signup: {
         view:'signup',
         heading: 'Looks like you are new here',
         subHeading:'Sign Up with your email/mobile to get started'
@@ -44,7 +44,7 @@ const LoginDialog = ({openLoginDialog , setopenLoginDialog}) =>{
     }
 
     const handleClose = () =>{
-        console.log(openLoginDialog);
+        // console.log(openLoginDialog);
         setopenLoginDialog(false);
         // console.log(openLoginDialog);
         setAccount(accountInitialValues.login);
@@ -72,10 +72,13 @@ const LoginDialog = ({openLoginDialog , setopenLoginDialog}) =>{
     const onValueChange = (e) =>{
         setLogin({...login , [e.target.name]: e.target.value});
     }
-
+    
     const loginUser = async () =>{
+        // {localStorage.setItem('login', login)}
+        // console.log(login);
+        // localStorage.setItem('Password', pwd);
         let res = await authenticationLogin(login);
-        console.log(res);
+        // console.log(res);
 
         // console.log(res.status);
 
@@ -105,7 +108,7 @@ const LoginDialog = ({openLoginDialog , setopenLoginDialog}) =>{
                     (Account.view === 'login') ? 
                         <div className="right p-6 flex flex-col gap-24 ">
                             <div className='flex flex-col gap-3'>
-
+                                
                                 <input type="text" className='h-10 focus:outline-none' onChange={(e) => onValueChange(e)} name = 'emailPhone' placeholder='Enter Email/Phone Number'/>
                                 <input type="password" className='h-10 focus:outline-none' onChange={(e) => onValueChange(e)} name = 'password' placeholder='Enter Password'/>
 
@@ -126,7 +129,6 @@ const LoginDialog = ({openLoginDialog , setopenLoginDialog}) =>{
                     :
                         <div className="right p-6 flex flex-col gap-24 ">
                             <div className='flex flex-col gap-3'>
-
                                 <input type="text" className='h-10 focus:outline-none'  onChange={(e) => onInputChange(e)} name = 'firstname' placeholder='Enter Firstname'/>
                                 <input type="text" className='h-10 focus:outline-none'  onChange={(e) => onInputChange(e)} name = 'lastname'  placeholder='Enter Lastname'/>
                                 <input type="text" className='h-10 focus:outline-none' onChange={(e) => onInputChange(e)} name = 'username' placeholder='Enter Username'/>
@@ -138,13 +140,8 @@ const LoginDialog = ({openLoginDialog , setopenLoginDialog}) =>{
                                 <button onClick = {() => signupUser() } className= 'bg-blue-500 h-10 text-[17px] rounded-sm' >Continue</button>
                                 <button className='flex text-[14px] justify-center' onClick ={() => toggleSignUp() } href="">Already Registered? Login</button>
                             </div>
-                    
                         </div>
-
-                }   
-
-
-
+                }
             </div>
         </Dialog>
     )

@@ -7,8 +7,8 @@ import { useDispatch } from 'react-redux'
 const CartItems = ( {item} ) => {
 
   const dispatch = useDispatch();
-  const removeitem = () =>{
-    console.log(item.id);
+  const removeitem = () => {
+    // console.log(item.id);
     dispatch(removeFromCart(item.id));
   }
 
@@ -43,7 +43,7 @@ const CartItems = ( {item} ) => {
                 <div>
                     <button onClick={() => removeitem() } className='p-2 font-semibold rounded-md bg-gray-400'>Remove</button>
                   </div>
-          </div>
+        </div>
 
     </div>
   )

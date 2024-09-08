@@ -39,7 +39,7 @@ const Slide = ( {products , title , timer = false } ) =>{
                     <><Countdown date = {Date.now() + 5.04e+7 } renderer={renderer}/>
                     <AlarmClockIcon/></>
 
-                 }
+                    }
                 </div>
                 <div className="">
                     <button className = 'p-2 text-white  rounded-md m-auto bg-blue-400'>VIEW ALL</button>
@@ -67,7 +67,6 @@ const Slide = ( {products , title , timer = false } ) =>{
 
                     <Link to = {`product/${product.id}`}>
                     
-
                     <div className="m-2 flex flex-col items-center">
                         <img className='w-[150px] h-[150px]' src = {product.url} alt = "product " />
 
@@ -87,5 +86,4 @@ const Slide = ( {products , title , timer = false } ) =>{
     )
 
 }
-
 export default Slide

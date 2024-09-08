@@ -1,4 +1,4 @@
-import logo from './Ajio-Logo.svg';
+import logo from './new_logo.jpg';
 import loginLogo from './login.svg'
 import cartSvg from './cart.svg'
 import sellerSvg from './seller.svg'
@@ -22,7 +22,7 @@ const Header = () => {
 
     const dispatch = useDispatch();
 
-    const { products } = useSelector(state => state.getProducts);
+    const { products } = useSelector(state => state.getProducts) ;
     useEffect(()=>{
         dispatch(getProducts());
     } , [dispatch])
@@ -45,7 +45,7 @@ const Header = () => {
 
         <div className="w-full px-2 h-20 fixed top-0 flex justify-between items-center z-50 bg-white shadow-md">
             <Link to = '/'>
-            <img className = 'w-20 h-20 md:w-36 md:h-20' src = {logo} alt="" />
+                <img className = 'w-20 h-20 md:w-36 md:h-20' src = {logo} alt="" />
             </Link>
 
             <div className='relative'>
@@ -62,7 +62,7 @@ const Header = () => {
 
                     <ListWrapper>
                         {
-                            // <div className='bg-red-600'> Hello </div>
+                            //<div className='bg-red-600'> Hello </div>
                             products.filter(product => product.title.longTitle.toLowerCase().includes(text.toLowerCase())).map(product =>{
                                 return <ListItem>
                                     <Link to = {`/product/${product.id}`} onClick={() => setText('')}>

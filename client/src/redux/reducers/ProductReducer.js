@@ -14,7 +14,7 @@ export const getProductsReducer = (state = {products : []} , action) =>{
 }
 
 export const getProductDetailsReducer = (state = {product : {} }, action) =>{
-    switch(action.type){
+    switch(action.type) {
         case actionTypes.GET_PRODUCT_DETAILS_REQUEST:
             return {loading : true}
         case actionTypes.GET_PRODUCT_DETAILS_SUCCESS:

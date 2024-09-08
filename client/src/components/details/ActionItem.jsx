@@ -14,11 +14,10 @@ const ActionItem = ( { product } ) =>{
     const navigate = useNavigate();
     const {id} = product;
     const [ quantity , setquantity ] = useState(1);
-     
+    
     const addItemToCart = () => {
-        dispatch(addToCart( id , quantity ));
+        dispatch(addToCart( id , quantity )) ;
         navigate('/cart')
-        // console.log()
     }
 
     const buyNow = () => {
@@ -35,7 +34,6 @@ const ActionItem = ( { product } ) =>{
 
             <img className = 'w-100 md:h-96' src={product.url} alt="" />
             <div className="flex justify-center space-x-2">
-                
                 <button onClick={() => addItemToCart() } className="p-3 w-[48%] flex items-center justify-center gap-2 bg-blue-500 rounded-md"><img className='invert' src={cartLogo} alt="" />Add to Cart</button>
                 <button onClick={() => buyNow()} className="p-3 w-[48%] bg-blue-500 rounded-md"><FlashOnIcon ></FlashOnIcon> Buy Now</button>
             </div>
